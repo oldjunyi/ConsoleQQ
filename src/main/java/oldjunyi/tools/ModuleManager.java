@@ -15,11 +15,9 @@ public class ModuleManager implements MessageCallback {
 	
 	TreeMap<String, BaseModule> modules = new TreeMap<String, BaseModule>();
 	public SmartQQClient client;
-	public long adminQQ;
 	
-	public ModuleManager(SmartQQClient client, long adminQQ) {
+	public ModuleManager(SmartQQClient client) {
 		this.client = client;
-		this.adminQQ = adminQQ;
 	}
 	
 	public void add(String className) {
