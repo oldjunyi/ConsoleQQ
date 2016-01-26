@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'oldjunyi.tools.ConsoleQQ'
+    }
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    destinationDir = file("$rootDir")
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+    compile 'com.alibaba:fastjson:1.2.7'
+    compile 'org.projectlombok:lombok:1.16.6'
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+compileJava.options.encoding = 'UTF-8'
