@@ -21,7 +21,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.apache.httpcomponents:httpclient:4.5'
     compile 'com.alibaba:fastjson:1.2.7'
-    compile 'org.projectlombok:lombok:1.16.6'
 }
 
 sourceCompatibility = 1.7
